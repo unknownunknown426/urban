@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('images/background.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.bird {
+	height: 100px;
+	width: 130px;
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+}
+
+.pipe_sprite {
+	position: fixed;
+	top: 70vh;
+	left: 120vw;
+	height: 80vh;
+	width: 7vw;
+
+
+	background: linear-gradient(to bottom, #f1f1f1 0%, #2e2e2e 100%);
+
+
+	background-image:
+		repeating-linear-gradient(0deg, #504e4e, #7c7474 20px, #131212 20px, #131111 22px),
+		repeating-linear-gradient(90deg, #201f1f, #4d4a4a 15px, #555 15px, #555 17px);
+	background-size: cover;
+
+	border-radius: 2px; 
+	border: 1px solid #555;
+
+	box-shadow:
+		inset -2px -2px 5px rgba(0,0,0,0.5),
+		inset 2px 2px 5px rgba(255,255,255,0.1),
+		0 5px 15px rgba(0,0,0,0.6);
+}
+
+.pipe_sprite::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		repeating-linear-gradient(
+			90deg,
+			rgba(255,255,255,0.05),
+			rgba(255,255,255,0.05) 3px,
+			transparent 3px,
+			transparent 6px
+		);
+	border-radius: inherit;
+}
+
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 4em;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.messageStyle {
+	background: rgb(138, 139, 139);
+	padding: 50px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 15%;
+	border: 3px solid rgb(167, 169, 170);
+}
+
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 10vh;
+	font-weight: 100;
+	color: rgb(243, 245, 245);
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+}
+
+.score_val {
+	color: rgb(0, 255, 0);
+	font-weight: bold;
+}
+
+.high-score {
+	position: fixed;
+	z-index: 10;
+	top: 15vh;
+	left: 10px;
+	font-size: 4vh;
+	font-weight: bold;
+	color: rgb(150, 149, 143);
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: black;
+	text-shadow: 0 0 10px rgb(209, 209, 207), 0 0 20px rgb(250, 249, 248);
+}
+
+.high-score_val {
+	color: rgb(255, 215, 0);
+}
+
+@media only screen and (max-width: 1080px) {
+	.message {
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+
+	.score {
+		font-size: 8vh;
+	}
+
+	.high-score {
+		font-size: 3.5vh;
+		top: 9vh;
+	}
+
+	.bird {
+		width: 120px;
+		height: 90px;
+	}
+
+	.pipe_sprite {
+		width: 14vw;
+	}
+}
